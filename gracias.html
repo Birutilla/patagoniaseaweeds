@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje recibido | Patagonia Seaweeds</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: var(--fjord); color: var(--foam); min-height: 100svh; display: grid; place-items: center; text-align: left; }
+    .box { padding: 40px var(--gutter); max-width: 640px; }
+    .box img { width: 200px; height: auto; margin-bottom: 40px; }
+    .box p { color: #D5E3E1; margin-bottom: 30px; }
+    .btn-send { background: var(--fucus); color: var(--fjord); }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="images/logo-claro.png" alt="Patagonia Seaweeds" width="200" height="123">
+    <h2 id="t">Mensaje recibido</h2>
+    <p id="p">Gracias por escribirnos. Le responderemos a la brevedad.</p>
+    <a class="btn btn-send" href="index.html" id="b">Volver al sitio</a>
+  </div>
+  <script>
+    try { if (localStorage.getItem('psw_lang') === 'en') { document.documentElement.lang = 'en';
+      document.getElementById('t').textContent = 'Message received';
+      document.getElementById('p').textContent = 'Thank you for writing. We will reply shortly.';
+      document.getElementById('b').textContent = 'Back to the site'; } } catch (e) {}
+  </script>
+</body>
+</html>
