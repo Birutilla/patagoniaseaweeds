@@ -62,7 +62,8 @@ section { position: relative; padding: clamp(72px, 11vw, 140px) 0; }
 .nav.on-dark .brand .logo-dark { display: none; }
 .nav.on-dark .brand .logo-light { display: block; }
 .nav-links { display: flex; gap: 24px; font-family: var(--display); font-size: 16px; }
-.nav-links a { text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.nav-links a { text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+@media (max-width: 1180px) { .nav-links { gap: 16px; font-size: 15px; } .nav-inner { gap: 20px; } }
 .nav-links a:hover { border-color: var(--kelp); }
 .lang { display: flex; border: 1px solid currentColor; border-radius: 20px; overflow: hidden; font-family: var(--display); font-size: 14px; }
 .lang button { padding: 4px 11px; opacity: .65; }
