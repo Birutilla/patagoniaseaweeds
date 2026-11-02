@@ -66,9 +66,10 @@ section { position: relative; padding: clamp(72px, 11vw, 140px) 0; }
 @media (max-width: 1180px) { .nav-links { gap: 16px; font-size: 15px; } .nav-inner { gap: 20px; } }
 .nav-links a:hover { border-color: var(--kelp); }
 .lang { display: flex; border: 1px solid currentColor; border-radius: 20px; overflow: hidden; font-family: var(--display); font-size: 14px; }
-.lang button { padding: 4px 11px; opacity: .65; }
-.lang button[aria-pressed="true"] { background: var(--ink); color: var(--foam); opacity: 1; }
-.nav.on-dark .lang button[aria-pressed="true"] { background: var(--foam); color: var(--fjord); }
+.lang button, .lang a { padding: 4px 11px; opacity: .65; text-decoration: none; color: inherit; }
+.lang a:hover { opacity: 1; }
+.lang button[aria-pressed="true"], .lang a[aria-current="true"] { background: var(--ink); color: var(--foam); opacity: 1; }
+.nav.on-dark .lang button[aria-pressed="true"], .nav.on-dark .lang a[aria-current="true"] { background: var(--foam); color: var(--fjord); }
 .burger { display: none; width: 40px; height: 40px; }
 .burger span { display: block; height: 2px; width: 22px; margin: 5px auto; background: currentColor; transition: transform .2s; }
 @media (max-width: 860px) {

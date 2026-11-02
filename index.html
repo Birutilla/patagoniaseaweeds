@@ -3,32 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patagonia Seaweeds | Algas de la Patagonia, del mar a la tierra</title>
-  <meta name="description" content="Patagonia Seaweeds SpA, Puerto Varas, Chile. Asesoría en hatchery, cultivo y repoblamiento de algas, investigación aplicada y desarrollo de bioestimulantes a partir de Macrocystis pyrifera.">
+  <title>Cultivo de algas y hatchery en Chile | Patagonia Seaweeds</title>
+  <meta name="description" content="Hatchery de algas, cultivo y repoblamiento de huiro (Macrocystis), algas para salmonicultura (IMTA), bioestimulantes y desarrollo de productos. Puerto Varas, Chile.">
   <link rel="canonical" href="https://www.patagoniaseaweeds.com/">
   <link rel="alternate" hreflang="es" href="https://www.patagoniaseaweeds.com/">
-  <link rel="alternate" hreflang="en" href="https://www.patagoniaseaweeds.com/?lang=en">
+  <link rel="alternate" hreflang="en" href="https://www.patagoniaseaweeds.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.patagoniaseaweeds.com/">
+  <meta name="theme-color" content="#0E2A33">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Patagonia Seaweeds">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:url" content="https://www.patagoniaseaweeds.com/">
-  <meta property="og:title" content="Patagonia Seaweeds | Del mar a la tierra">
-  <meta property="og:description" content="Hatchery, cultivo y repoblamiento de algas, investigación aplicada y bioestimulantes de huiro desde la Región de Los Lagos.">
+  <meta property="og:title" content="Patagonia Seaweeds | Algas de la Patagonia, del mar a la tierra">
+  <meta property="og:description" content="Hatchery, cultivo y repoblamiento de algas, algas para salmonicultura, investigación aplicada y desarrollo de productos desde Puerto Varas, Chile.">
   <meta property="og:image" content="https://www.patagoniaseaweeds.com/images/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Patagonia Seaweeds SpA",
-    "url": "https://www.patagoniaseaweeds.com",
-    "logo": "https://www.patagoniaseaweeds.com/images/logo-color.png",
-    "foundingDate": "2015-10-02",
-    "founder": { "@type": "Person", "name": "Javier Infante Rosselot" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Puerto Varas", "addressRegion": "Región de Los Lagos", "addressCountry": "CL" },
-    "email": "jinfante@patagoniaseaweeds.com",
-    "description": "Asesoría en hatchery, cultivo y repoblamiento de algas, investigación aplicada y desarrollo de bioestimulantes de Macrocystis pyrifera.",
-    "knowsLanguage": ["es", "en"]
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://www.patagoniaseaweeds.com/#org",
+        "name": "Patagonia Seaweeds SpA",
+        "alternateName": "Patagonia Seaweeds",
+        "url": "https://www.patagoniaseaweeds.com/",
+        "logo": "https://www.patagoniaseaweeds.com/images/logo-color.png",
+        "image": "https://www.patagoniaseaweeds.com/images/og.jpg",
+        "foundingDate": "2015-10-02",
+        "founder": { "@id": "https://www.patagoniaseaweeds.com/#javier" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Puerto Varas", "addressRegion": "Región de Los Lagos", "addressCountry": "CL" },
+        "areaServed": [{ "@type": "Country", "name": "Chile" }, { "@type": "Place", "name": "Internacional" }],
+        "email": "jinfante@patagoniaseaweeds.com",
+        "description": "Empresa de Puerto Varas, Chile, especializada en hatchery de algas, cultivo y repoblamiento de huiro (Macrocystis pyrifera), cultivo de algas junto a centros de salmón (IMTA), bioestimulantes, biorrefinería y desarrollo de productos a partir de algas.",
+        "knowsAbout": ["cultivo de algas", "hatchery de algas", "Macrocystis pyrifera", "huiro", "kelp", "repoblamiento de algas", "acuicultura multitrófica integrada (IMTA)", "bioestimulantes de algas", "biorrefinería de algas", "alginato", "fucoidano"],
+        "knowsLanguage": ["es", "en"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hatchery y semilla de algas", "description": "Diseño y puesta en marcha de hatcheries, protocolos de soros, gametofitos y siembra, y capacitación de equipos." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cultivo y repoblamiento de algas", "description": "Evaluación de sitios, diseño de líneas y fondeos, operación, monitoreo, cosecha y repoblamiento de praderas naturales." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Algas para salmonicultura (IMTA)", "description": "Cultivo de algas junto a centros de salmón para recuperar nitrógeno, fósforo y carbono, con resultados medidos y verificables." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Investigación y desarrollo de productos y procesos", "description": "Biorrefinería, bioestimulantes, alimento animal, alimentación humana, cosmética y bioplásticos a partir de algas." } }
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.patagoniaseaweeds.com/#javier",
+        "name": "Javier Infante Rosselot",
+        "jobTitle": "Fundador",
+        "worksFor": { "@id": "https://www.patagoniaseaweeds.com/#org" },
+        "image": "https://www.patagoniaseaweeds.com/images/fotos/perfil-javier.jpg"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.patagoniaseaweeds.com/#web",
+        "url": "https://www.patagoniaseaweeds.com/",
+        "name": "Patagonia Seaweeds",
+        "inLanguage": ["es", "en"],
+        "publisher": { "@id": "https://www.patagoniaseaweeds.com/#org" }
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,8 +95,8 @@
       <a href="#contacto" data-i18n="nav5">Contacto</a>
     </nav>
     <div class="lang" role="group" aria-label="Idioma / Language">
-      <button type="button" data-lang="es" aria-pressed="true">ES</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <a href="/" hreflang="es" lang="es" aria-current="true">ES</a>
+      <a href="/en/" hreflang="en" lang="en">EN</a>
     </div>
     <button class="burger" id="burger" aria-label="Menú" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
   </div>
@@ -490,17 +530,17 @@
       </div>
     </div>
     <div class="timeline" id="timeline" tabindex="0" aria-label="Línea de tiempo">
-      <article class="ev"><span class="yr">2015</span><span class="place">Puerto Varas</span><h3 data-i18n="e1_h">Nace Patagonia Seaweeds</h3><p data-i18n="e1_p">Se constituye la empresa para prestar servicios de cultivo, investigación y asesoría en algas.</p><img src="images/fotos/tl-canopy-gopro.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2015</span><span class="place" data-i18n="e2_l">Calbuco</span><h3 data-i18n="e2_h">Hatchery para un programa industrial</h3><p data-i18n="e2_p">Producción de semilla, monitoreo ambiental e instalación de sistemas de cultivo de huiro.</p><img src="images/fotos/tl-hatchery-2015.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2016</span><span class="place" data-i18n="e3_l">Región de Los Lagos</span><h3 data-i18n="e3_h">Proyecto FIC Algas</h3><p data-i18n="e3_p">Hatchery y cultivo piloto de huiro con capacitación a pescadores artesanales, con financiamiento regional.</p><img src="images/fotos/tl-fic-capacitacion.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2017</span><span class="place" data-i18n="e4_l">Región de Los Lagos</span><h3 data-i18n="e4_h">Secado solar de algas</h3><p data-i18n="e4_p">Prototipo de secador solar para producir harina de algas, con apoyo de Corfo.</p><img src="images/fotos/tl-secador-solar.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2018</span><span class="place">California</span><h3 data-i18n="e5_h">ARPA-E MARINER</h3><p data-i18n="e5_p">Investigador principal en un programa del Departamento de Energía de Estados Unidos para cultivo de macroalgas a gran escala.</p><img src="images/fotos/tl-california-huiro.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2019</span><span class="place" data-i18n="e6_l">Islas Feroe</span><h3 data-i18n="e6_h">Cultivo en mar abierto</h3><p data-i18n="e6_p">Diseño de sistemas de cultivo y apoyo en solicitudes de concesión en el Atlántico Norte.</p><img src="images/fotos/tl-feroe-cultivo.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2020</span><span class="place" data-i18n="e7_l">Europa y Medio Oriente</span><h3 data-i18n="e7_h">Protocolos y propuestas</h3><p data-i18n="e7_p">Protocolos de extracción y envío de soros de Macrocystis, y propuesta técnica de hatchery y cultivo para un piloto en el Mar Rojo.</p><img src="images/fotos/tl-soros.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2022</span><span class="place" data-i18n="e8_l">California e Islas Feroe</span><h3 data-i18n="e8_h">Asesoría continua en I+D</h3><p data-i18n="e8_p">Servicios de investigación y desarrollo para Ocean Rainforest, empresa de cultivo de algas en mar abierto.</p><img src="images/fotos/tl-ocean-rainforest.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2023</span><span class="place" data-i18n="e9_l">Canadá</span><h3 data-i18n="e9_h">Hatchery y cultivo de huiro</h3><p data-i18n="e9_p">Asesoría en terreno para Cascadia Seaweed sobre buenas prácticas de hatchery y cultivo.</p><img src="images/fotos/tl-canada-cultivo.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2024</span><span class="place">California</span><h3 data-i18n="e11_h">Cultivo de huiro en mar abierto</h3><p data-i18n="e11_p">Dirección de un proyecto de cultivo offshore de Macrocystis pyrifera en California, financiado por el Departamento de Energía de Estados Unidos con US$ 9 millones.</p><img src="images/fotos/tl-california-offshore.jpg" alt="" loading="lazy"></article>
-      <article class="ev"><span class="yr">2026</span><span class="place">Puerto Varas</span><h3 data-i18n="e10_h">Planta piloto de procesamiento</h3><p data-i18n="e10_p">Instalación de una planta piloto para la extracción y el procesamiento de algas.</p><img src="images/fotos/tl-huiro-macrocystis.jpg" alt="" loading="lazy"></article>
+      <article class="ev"><span class="yr">2015</span><span class="place">Puerto Varas</span><h3 data-i18n="e1_h">Nace Patagonia Seaweeds</h3><p data-i18n="e1_p">Se constituye la empresa para prestar servicios de cultivo, investigación y asesoría en algas.</p><img src="images/fotos/tl-canopy-gopro.jpg" alt="Dosel de huiro en la superficie del mar, visto bajo el agua" loading="lazy"></article>
+      <article class="ev"><span class="yr">2015</span><span class="place" data-i18n="e2_l">Calbuco</span><h3 data-i18n="e2_h">Hatchery para un programa industrial</h3><p data-i18n="e2_p">Producción de semilla, monitoreo ambiental e instalación de sistemas de cultivo de huiro.</p><img src="images/fotos/tl-hatchery-2015.jpg" alt="Estanques del hatchery de algas en Calbuco" loading="lazy"></article>
+      <article class="ev"><span class="yr">2016</span><span class="place" data-i18n="e3_l">Región de Los Lagos</span><h3 data-i18n="e3_h">Proyecto FIC Algas</h3><p data-i18n="e3_p">Hatchery y cultivo piloto de huiro con capacitación a pescadores artesanales, con financiamiento regional.</p><img src="images/fotos/tl-fic-capacitacion.jpg" alt="Capacitación en cultivo de huiro a pescadores artesanales" loading="lazy"></article>
+      <article class="ev"><span class="yr">2017</span><span class="place" data-i18n="e4_l">Región de Los Lagos</span><h3 data-i18n="e4_h">Secado solar de algas</h3><p data-i18n="e4_p">Prototipo de secador solar para producir harina de algas, con apoyo de Corfo.</p><img src="images/fotos/tl-secador-solar.jpg" alt="Esquema del prototipo de secador solar para harina de algas" loading="lazy"></article>
+      <article class="ev"><span class="yr">2018</span><span class="place">California</span><h3 data-i18n="e5_h">ARPA-E MARINER</h3><p data-i18n="e5_p">Investigador principal en un programa del Departamento de Energía de Estados Unidos para cultivo de macroalgas a gran escala.</p><img src="images/fotos/tl-california-huiro.jpg" alt="Huiro Macrocystis pyrifera cultivado en California" loading="lazy"></article>
+      <article class="ev"><span class="yr">2019</span><span class="place" data-i18n="e6_l">Islas Feroe</span><h3 data-i18n="e6_h">Cultivo en mar abierto</h3><p data-i18n="e6_p">Diseño de sistemas de cultivo y apoyo en solicitudes de concesión en el Atlántico Norte.</p><img src="images/fotos/tl-feroe-cultivo.jpg" alt="Cultivo de algas en mar abierto en las Islas Feroe" loading="lazy"></article>
+      <article class="ev"><span class="yr">2020</span><span class="place" data-i18n="e7_l">Europa y Medio Oriente</span><h3 data-i18n="e7_h">Protocolos y propuestas</h3><p data-i18n="e7_p">Protocolos de extracción y envío de soros de Macrocystis, y propuesta técnica de hatchery y cultivo para un piloto en el Mar Rojo.</p><img src="images/fotos/tl-soros.jpg" alt="Soros de Macrocystis preparados para su envío" loading="lazy"></article>
+      <article class="ev"><span class="yr">2022</span><span class="place" data-i18n="e8_l">California e Islas Feroe</span><h3 data-i18n="e8_h">Asesoría continua en I+D</h3><p data-i18n="e8_p">Servicios de investigación y desarrollo para Ocean Rainforest, empresa de cultivo de algas en mar abierto.</p><img src="images/fotos/tl-ocean-rainforest.jpg" alt="Línea de cultivo de algas de Ocean Rainforest" loading="lazy"></article>
+      <article class="ev"><span class="yr">2023</span><span class="place" data-i18n="e9_l">Canadá</span><h3 data-i18n="e9_h">Hatchery y cultivo de huiro</h3><p data-i18n="e9_p">Asesoría en terreno para Cascadia Seaweed sobre buenas prácticas de hatchery y cultivo.</p><img src="images/fotos/tl-canada-cultivo.jpg" alt="Cultivo de huiro en la costa de Canadá" loading="lazy"></article>
+      <article class="ev"><span class="yr">2024</span><span class="place">California</span><h3 data-i18n="e11_h">Cultivo de huiro en mar abierto</h3><p data-i18n="e11_p">Dirección de un proyecto de cultivo offshore de Macrocystis pyrifera en California, financiado por el Departamento de Energía de Estados Unidos con US$ 9 millones.</p><img src="images/fotos/tl-california-offshore.jpg" alt="Cultivo offshore de Macrocystis pyrifera en California" loading="lazy"></article>
+      <article class="ev"><span class="yr">2026</span><span class="place">Puerto Varas</span><h3 data-i18n="e10_h">Planta piloto de procesamiento</h3><p data-i18n="e10_p">Instalación de una planta piloto para la extracción y el procesamiento de algas.</p><img src="images/fotos/tl-huiro-macrocystis.jpg" alt="Láminas de huiro Macrocystis pyrifera para procesamiento" loading="lazy"></article>
     </div>
   </div>
 </section>

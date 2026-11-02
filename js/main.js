@@ -2,161 +2,20 @@
 (function () {
   'use strict';
 
-  /* ---------- English text (Spanish lives in the HTML) ---------- */
-  var EN = {
-    skip: 'Skip to content',
-    nav1: 'What we do', nav2: 'Hatchery', nav3: 'Bioproducts', nav4: 'Track record', nav5: 'Contact', nav6: 'Salmon farming', nav7: 'Products',
-    h1a: 'Patagonian seaweed,', h1b: 'from sea to land.',
-    hero_lead: 'Seaweed hatchery, farming and restoration services from Puerto Varas, Chile, with applied research to turn seaweed into valuable products.',
-    cta1: 'Talk to us about your project', cta2: 'See our track record',
-    wwd_h: 'What we do with seaweed',
-    wwd_p: 'We work across the whole life of seaweeds: producing healthy seed in the hatchery, taking it to sea and keeping a farm running, and researching what to do with the biomass once it is harvested.',
-    l1_h: 'Hatchery and seed',
-    l1_p: 'Seedlings and seeded substrates with guaranteed size and density, free of fouling, so every farm starts with quality material.',
-    l1_a: 'Hatchery design and start up', l1_b: 'Sori, gametophyte and seeding protocols', l1_c: 'Training for laboratory teams',
-    l2_h: 'Farming and restoration',
-    l2_p: 'From site to mooring: area selection, farm system design, installation and operation at sea, and restoration of natural kelp beds.',
-    l2_a: 'Site assessment and permitting support', l2_b: 'Design of lines, moorings and modules', l2_c: 'Operation, monitoring and harvest', l2_d: 'Integrated farming with salmon (IMTA)',
-    l3_h: 'Research and development of products and processes',
-    l3_p: 'Applied research, farm modeling and analysis of production data, together with the development of products from the biomass.',
-    l3_a: 'Publicly funded projects', l3_b: 'Biorefinery, bioactives and biopolymers', l3_c: 'Product development, from lab to pilot',
-    cy_h: 'How a giant kelp farm begins',
-    cy_p: 'Macrocystis pyrifera alternates between a giant plant and a microscopic stage. Hatchery work is about controlling that invisible stage. There are two routes to produce seed: choose one and walk through its steps.',
-    s1: 'Broodstock', s2: 'Zoospores', s3: 'Gametophytes', s4: 'Juvenile sporophytes', s5: 'Seed in tanks', s6: 'Farming at sea',
-    s7: 'Harvest', p7_h: 'Harvest', p7_p: 'When the kelp reaches its target biomass, the lines are hauled with a crane and the seaweed is cut and loaded on board. Harvest can be total or partial, leaving the base of the plant to regrow.', p7_w: 'Harvest planning, biomass records per line and handling of the biomass to its destination.',
-    rt_car: 'Spool route', rt_car_d: 'Spores settle on twine wound on spools and grow in tanks until they go to sea.',
-    rt_gam: 'Gametophyte route', rt_gam_d: 'Gametophytes are propagated in the lab, induced to reproduce and seeded onto the rope.',
-    sc: 'Spool seeding', sb: 'Bank and propagation', si: 'Induction', ss: 'Seeding',
-    pc_h: 'Spool seeding', pc_p: 'Zoospores settle on fine twine wound on spools, inside tanks with controlled light, temperature and nutrients. In six to eight weeks the sporophytes reach a few millimeters and the twine is ready to go to sea.', pc_w: 'Production of seeded spools, with density and contamination control throughout the tank period.',
-    pb_h: 'Bank and propagation', pb_p: 'Stock cultures kept under low light and temperature serve as a germplasm bank for years. From them, biomass is multiplied by fragmentation in flasks, carboys and photobioreactors, without relying on new wild broodstock.', pb_w: 'Germplasm banks by origin and production scale propagation for each season.',
-    pi_h: 'Induction', pi_p: 'About three weeks before seeding, a change in light and photoperiod triggers reproduction. Gametophytes produce eggs and sperm, and the fertilized eggs give rise to the first sporophytes.', pi_w: 'Induction trials per batch to secure culture response on the seeding date.',
-    ps_h: 'Seeding', ps_p: 'Induced seed is applied to the grow rope in two steps with a seeding machine: first the suspension of sporophytes and gametophytes, then a natural binder that fixes it to the fibers. It can also be seeded onto spools, as in the traditional route.', ps_w: 'Mechanized direct seeding and spool seeding, depending on site and project scale.',
-    sd0: 'Direct seeding by machine', sd1: 'Step 1', sd1b: 'seed', sd2: 'Step 2', sd2b: 'binder', sd3: 'seeded rope',
-    what: 'What we do', fig1: 'sori',
-    p1_h: 'Broodstock selection',
-    p1_p: 'Fertile blades near the base of the plant develop sori, dark patches where millions of spores form. They are collected, cleaned and selected by maturity and origin.',
-    p1_w: 'Protocols for collecting, cleaning and shipping sori, including shipments abroad.',
-    p2_h: 'Zoospore release',
-    p2_p: 'In the laboratory the sori release zoospores: swimming cells a few microns long looking for a place to settle. Temperature, light and hygiene decide how many survive.',
-    p2_w: 'Control of spore density and bacterial contamination from day one.',
-    p3_h: 'Gametophytes in the lab',
-    p3_p: 'Zoospores germinate into microscopic male and female gametophytes that are kept free floating in culture medium, in a vegetative growth phase without reproduction.',
-    p3_w: 'Gametophyte isolation and culture under controlled light, temperature and nutrients.',
-    p4_h: 'Juvenile sporophytes',
-    p4_p: 'The sporophyte is the stage that grows into a plant several meters long. The first blades appear attached to the twine or grow rope and are tracked under the microscope until outplanting.',
-    p4_w: 'Size and density monitoring to deliver seed with guaranteed parameters.',
-    p5_h: 'Seed in tanks',
-    p5_p: 'Seeded line is kept on frames inside tanks until the seedlings are large enough to go to sea.',
-    p5_w: 'Hatchery operation and fouling free seeded substrates.',
-    p6_h: 'Farming at sea',
-    p6_p: 'At the farm site, the spool twine is wrapped around the longline, or the seeded rope is deployed directly, held by buoys and moorings. In a few months giant kelp can reach several meters and is ready to harvest.',
-    p6_w: 'Design, installation and operation of farm systems in Chile and abroad.',
-    bio_tag: 'In development',
-    bio_h: 'From kelp forest to farm field',
-    bio_p1: 'We are developing a liquid biostimulant from Macrocystis pyrifera grown in the Los Lagos Region of Chile.',
-    bio_p2: 'A seaweed biostimulant stimulates the plant\u2019s natural processes: better growth, better use of nutrients and greater stress tolerance, thanks to the bioactive compounds in giant kelp.',
-    fl1: 'Giant kelp', fl1s: 'Los Lagos', fl2: 'Extract', fl2s: 'seaweed', fl2t: 'compounds', fl3: 'Crop', fl3s: 'better stress', fl3t: 'response',
-    c1_h: 'Biostimulant', c1_p: 'Helps the plant perform better. It acts on plant processes, not mainly through nutrient supply.',
-    c2_h: 'Fertilizer', c2_p: 'Feeds the plant. Its job is to supply nutrients such as nitrogen, phosphorus and potassium.',
-    c3_h: 'Biocontrol', c3_p: 'Protects the plant. It acts against pests and diseases.',
-    bx_t: 'What it does for the crop',
-    bx1_h: 'Drought and water stress', bx1_p: 'Helps sustain growth when water is short or irrigation is limited.',
-    bx2_h: 'Heat', bx2_p: 'Supports plant function under extreme temperatures and UV exposure.',
-    bx3_h: 'Salinity', bx3_p: 'Supports water uptake and growth in saline soils or irrigation water.',
-    bx4_h: 'Nutrient use', bx4_p: 'Improves uptake and transport of available nutrients: more return from applied fertilizer.',
-    bx5_h: 'Living soil', bx5_p: 'Stimulates beneficial microbes, nutrient cycling and soil organic matter.',
-    bx6_h: 'Growth', bx6_p: 'Boosts germination, root development and shoot formation.',
-    bx7_h: 'Resilience', bx7_p: 'Speeds recovery after a stress event and protects yield potential.',
-    bx8_h: 'Yield and quality', bx8_p: 'The outcome of a plant that works better and tolerates more stress.',
-    cp_t: 'Active compounds in giant kelp',
-    cp1_h: 'Polysaccharides', cp1_p: 'Alginates, fucoidan and laminarin: stimulate growth, nutrient uptake and stress tolerance.',
-    cp2_h: 'Polyphenols', cp2_p: 'Antioxidants that modulate plant defenses and regulate growth.',
-    cp3_h: 'Phytohormone like compounds', cp3_p: 'Zoospores germinate into microscopic male and female gametophytes that are kept free floating in culture medium, in a vegetative growth phase without reproduction.',
-    cp4_h: 'Amino acids and minerals', cp4_p: 'The sporophyte is the stage that grows into a plant several meters long. The first blades appear attached to the twine or grow rope and are tracked under the microscope until outplanting.',
-    tl_h: 'More than a decade in the water',
-    e1_h: 'Patagonia Seaweeds is founded', e1_p: 'The company is set up to provide seaweed farming, research and consulting services.',
-    e2_l: 'Calbuco, Chile', e2_h: 'Hatchery for an industrial program', e2_p: 'Seed production, environmental monitoring and installation of giant kelp farm systems.',
-    e3_l: 'Los Lagos Region', e3_h: 'FIC Seaweed Project', e3_p: 'Pilot giant kelp hatchery and farm with training for small scale fishers, funded by the regional government.',
-    e4_l: 'Los Lagos Region', e4_h: 'Solar drying of seaweed', e4_p: 'Solar dryer prototype to produce seaweed meal, supported by Corfo.',
-    e5_h: 'ARPA-E MARINER', e5_p: 'Principal investigator in a U.S. Department of Energy program on large scale macroalgae farming.',
-    e6_l: 'Faroe Islands', e6_h: 'Open ocean farming', e6_p: 'Farm system design and support for site license applications in the North Atlantic.',
-    e7_l: 'Europe and Middle East', e7_h: 'Protocols and proposals', e7_p: 'Protocols for extracting and shipping Macrocystis sori, and a technical hatchery and farming proposal for a Red Sea pilot.',
-    e8_l: 'California and Faroe Islands', e8_h: 'Ongoing R&D advisory', e8_p: 'Research and development services for Ocean Rainforest, an open ocean seaweed farming company.',
-    e9_l: 'Canada', e9_h: 'Giant kelp hatchery and farming', e9_p: 'Field advisory for Cascadia Seaweed on hatchery and farming best practices.',
-    e11_h: 'Offshore giant kelp farming', e11_p: 'Leading an offshore Macrocystis pyrifera farming project in California, funded by the U.S. Department of Energy with US$ 9 million.',
-    e10_h: 'Pilot processing plant', e10_p: 'Installation of a pilot plant for seaweed extraction and processing.',
-    pub_h: 'Publications',
-    who_role: 'Founder and general manager',
-    who_p1: 'Aquaculture engineer with an MBA and more than twenty years in marine aquaculture, applied research and commercial development across Chile, the United States, Mexico, Australia, Scotland and the Faroe Islands, among other countries.',
-    who_p2: 'He has led large scale open water seaweed farming operations and multidisciplinary hatchery, farming and laboratory teams. He has directed publicly funded research programs in Chile and abroad, from proposal through budget management and reporting, bringing together biology, farm system engineering and technical and economic evaluation.',
-    who_p4: 'He has represented companies and consortia before regulators, funding agencies, investors, academia and industry, and has turned research results into working farm systems and peer reviewed publications.',
-    who_p3: 'PADI dive instructor and Chilean Maritime Authority specialist diver.',
-    ct_h: 'Let’s talk',
-    ct_p: 'Tell us where your project stands: a hatchery to design, a farm to install or a product idea to evaluate.',
-    ct_mail: 'Email', ct_where: 'Where we are', ct_addr: 'Puerto Varas, Los Lagos Region, Chile',
-    f_name: 'Name', f_org: 'Organization', f_mail: 'Email', f_topic: 'Topic', f_msg: 'Message', f_send: 'Send message',
-    o1: 'Hatchery and seed', o2: 'Farming and restoration', o3: 'Research and projects', o4: 'Bioproducts and biorefinery', o5: 'Other', o6: 'Seaweed for salmon farming (IMTA)',
-    im_tag: 'New regulatory framework, 2026',
-    im_h: 'Seaweed that works for salmon farming',
-    im_lead: 'We farm seaweed alongside salmon sites to recover the nitrogen, phosphorus and carbon released by fish production, and we deliver measured results that third parties can verify.',
-    im_p: 'In 2026 Chile\u2019s Undersecretariat of Fisheries and Aquaculture announced a change to Resolution 1089 that lets authorized salmon concessions add macroalgae, integrated or alternating with fish, without modifying the technical project. This opens integrated multi-trophic aquaculture (IMTA) to commercial scale in Chile.',
-    im_f1: 'Salmon farm', im_f2: 'Seaweed farm', im_f3: 'Dissolved N, P and CO\u2082', im_f4: 'what the salmon farm releases, the kelp turns into biomass',
-    is1_h: 'Site diagnosis', is1_p: 'Nitrogen, phosphorus and carbon balance from fish biomass, feed and local currents. It defines how much seaweed area is needed and where to place it.',
-    is2_h: 'Design and installation', is2_p: 'Native species such as giant kelp and Gracilaria, lines and moorings compatible with the fish pens, and seed from our hatchery.',
-    is3_h: 'Farming as a service', is3_p: 'We run the seaweed farm and coordinate it with the site\u2019s production cycle and fallowing, partnering with local fishers and unions.',
-    is4_h: 'Measurement and reporting', is4_p: 'Harvested biomass times laboratory N, P and C content. One report per season, traceable and open to independent verification.',
-    in1: 'of dissolved nitrogen are released per tonne of salmon produced, at a feed conversion ratio of 1.2.',
-    in2: 'of nitrogen leave the sea with every dry tonne of harvested seaweed.',
-    in3: 'of the dissolved nitrogen from a 4,500 t site could be recovered with about 50 hectares of seaweed.',
-    im_note: 'Reference figures from our nutrient balance model and SINTEF Ocean (2026); every site needs its own calculation. Carbon captured in the biomass is measured and reported; turning it into removal credits depends on methodologies still under development.',
-    ig_h: 'What the salmon farm gains',
-    ig1: 'Measured indicators of nutrients removed, for sustainability reporting and certification.',
-    ig2: 'Productive use of fallowed or underused concessions.',
-    ig3: 'Habitat and shelter for native species under the seaweed lines.',
-    ig4: 'Biomass with value: biostimulants and other biorefinery products.',
-    ig5: 'Joint work with coastal communities and a stronger local license to operate.',
-    br_h: 'Biorefinery: the whole seaweed, in cascade',
-    br_p: 'One harvest can yield several products. We research sequential extraction processes that use the entire biomass, from the soluble extract to biopolymers.',
-    cx1_h: 'Biostimulant', cx1_p: 'First soluble fraction, obtained by osmotic shock and heat treatment.',
-    cx2_h: 'Fucoidan', cx2_p: 'Sulfated polysaccharide with antioxidant, anti inflammatory and immunomodulatory activity.',
-    cx3_h: 'Alginate', cx3_p: 'Gelling and thickening agent; the base for biopolymers, hydrogels and bioplastics.',
-    cx4_h: 'Residual fraction', cx4_p: 'Soil amendments and new applications, so nothing goes to waste.',
-    br_ref: 'The optimization of this sequential extraction in Macrocystis pyrifera was published in ACS Omega (2026), with researchers from the Federal University of Rio de Janeiro.',
-    pd_h: 'Product development', pd_p: 'We take farmed kelp from the lab to the pilot and on to the market. We design publicly funded projects, work with universities and companies, scale up processes and assess the technical and economic feasibility of each product.',
-    pd1_t: 'Animal feed', pd1_h: 'Animal feed', pd1_p: 'We develop feeds that include kelp for farmed animals, as a source of minerals, fiber and functional polysaccharides.',
-    pd2_t: 'Seaweed meal', pd2_h: 'Human food', pd2_p: 'Meals and ingredients from farmed kelp for healthy foods, building on our drying, milling and nutritional characterization projects.',
-    pd3_t: 'Seaweed paste', pd3_h: 'Cosmetics', pd3_p: 'A stabilized paste of farmed Macrocystis that keeps its native polysaccharide and polyphenol profile. We are preparing a shipment to Korea to evaluate it as a raw material for the cosmetics industry.',
-    pd4_t: 'Research', pd4_h: 'Bioplastics and biomaterials', pd4_p: 'Kelp alginate is the basis for films, hydrogels and biodegradable bioplastics that can replace fossil based materials.',
-    pd5_t: 'Biorefinery', pd5_h: 'Extracts and bioactives', pd5_p: 'Fucoidan, alginate and polyphenols obtained by sequential extraction, for applications in nutrition, health and personal care.',
-    pd6_t: 'Biostimulant', pd6_h: 'Agriculture', pd6_p: 'Biostimulants and soil amendments from kelp, for crops that cope better with stress and for livelier soils.',
-    dv_h: 'Project and product development', dv_p: 'We take ideas from the lab to the pilot: publicly funded project design, university partnerships, process scale up and technical and economic evaluation of each product.',
-    depth: 'Depth'
-  };
+  /* English text lives in en/index.html, generated from the Spanish page */
+
   var MSG = {
     es: { sending: 'Enviando...', ok: 'Mensaje enviado. Le responderemos pronto.', err: 'No se pudo enviar. Escríbanos a jinfante@patagoniaseaweeds.com.', missing: 'Complete nombre, correo y mensaje.' },
     en: { sending: 'Sending...', ok: 'Message sent. We will reply soon.', err: 'The message could not be sent. Write to jinfante@patagoniaseaweeds.com.', missing: 'Please fill in name, email and message.' }
   };
 
-  var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
-  var ES = {};
-  nodes.forEach(function (n) { ES[n.getAttribute('data-i18n')] = n.textContent; });
-  var lang = 'es';
-
-  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
-
-  function setLang(l) {
-    lang = l === 'en' ? 'en' : 'es';
-    var dict = lang === 'en' ? EN : ES;
-    nodes.forEach(function (n) { var k = n.getAttribute('data-i18n'); if (dict[k] !== undefined) n.textContent = dict[k]; });
-    document.documentElement.lang = lang;
-    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'); });
-    store('psw_lang', lang);
-  }
-  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  /* each language is its own static page ("/" and "/en/"), so search engines index both */
+  var lang = (document.documentElement.lang || 'es').slice(0, 2) === 'en' ? 'en' : 'es';
   var q = new URLSearchParams(location.search).get('lang');
-  var saved = store('psw_lang');
-  var initial = q || saved || ((navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-  if (initial !== 'es') setLang(initial);
+  if (q === 'en' && lang === 'es' && /^https?:/.test(location.protocol)) location.replace('/en/' + location.hash);
+  document.querySelectorAll('.lang a').forEach(function (a) {
+    a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash; });
+  });
 
   /* ---------- nav ---------- */
   var nav = document.getElementById('nav');
