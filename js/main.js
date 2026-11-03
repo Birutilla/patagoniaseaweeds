@@ -12,7 +12,16 @@
   /* each language is its own static page ("/" and "/en/"), so search engines index both */
   var lang = (document.documentElement.lang || 'es').slice(0, 2) === 'en' ? 'en' : 'es';
   var q = new URLSearchParams(location.search).get('lang');
-  if (q === 'en' && lang === 'es' && /^https?:/.test(location.protocol)) location.replace('/en/' + location.hash);
+  if (q === 'en' && lang === 'es' && /^https?:/.test(location.protocol)) location.replace('/en/');
+  /* old single-page anchors (/#contacto) now live on their own pages */
+  (function () {
+    var id = location.hash.slice(1);
+    if (!id || document.getElementById(id)) return;
+    var es = { impacto: '/impacto/', ciclo: '/hatchery/', imta: '/salmonicultura/', bioestimulante: '/productos/', biorrefineria: '/productos/#biorrefineria', productos: '/productos/#productos', trayectoria: '/trayectoria/', publicaciones: '/trayectoria/#publicaciones', nosotros: '/trayectoria/#nosotros', contacto: '/contacto/' };
+    var en = { impacto: '/en/impact/', ciclo: '/en/hatchery/', imta: '/en/salmon-farming/', bioestimulante: '/en/products/', biorrefineria: '/en/products/#biorrefineria', productos: '/en/products/#productos', trayectoria: '/en/track-record/', publicaciones: '/en/track-record/#publicaciones', nosotros: '/en/track-record/#nosotros', contacto: '/en/contact/' };
+    var to = (lang === 'en' ? en : es)[id];
+    if (to && /^https?:/.test(location.protocol)) location.replace(to);
+  })();
   document.querySelectorAll('.lang a').forEach(function (a) {
     a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash; });
   });
@@ -672,18 +681,20 @@
       if (e.key === 'ArrowLeft') { e.preventDefault(); select((i - 1 + tabs.length) % tabs.length, true); }
     });
   });
-  setRoute('car', true);
+  if (allTabs.length) setRoute('car', true);
 
   /* ---------- timeline ---------- */
   var tl = document.getElementById('timeline');
-  function tlStep() { var ev = tl.querySelector('.ev'); return ev ? ev.offsetWidth : 320; }
-  document.getElementById('tlPrev').addEventListener('click', function () { tl.scrollBy({ left: -tlStep(), behavior: reduce ? 'auto' : 'smooth' }); });
-  document.getElementById('tlNext').addEventListener('click', function () { tl.scrollBy({ left: tlStep(), behavior: reduce ? 'auto' : 'smooth' }); });
+  if (tl) {
+    var tlStep = function () { var ev = tl.querySelector('.ev'); return ev ? ev.offsetWidth : 320; };
+    document.getElementById('tlPrev').addEventListener('click', function () { tl.scrollBy({ left: -tlStep(), behavior: reduce ? 'auto' : 'smooth' }); });
+    document.getElementById('tlNext').addEventListener('click', function () { tl.scrollBy({ left: tlStep(), behavior: reduce ? 'auto' : 'smooth' }); });
+  }
 
   /* ---------- contact form ---------- */
   var form = document.getElementById('contactForm');
   var msg = document.getElementById('formMsg');
-  form.addEventListener('submit', function (e) {
+  if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     var t = MSG[lang];
     var name = form.nombre.value.trim(), mail = form.email.value.trim(), body = form.mensaje.value.trim();

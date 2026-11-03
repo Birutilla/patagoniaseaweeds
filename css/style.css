@@ -82,7 +82,7 @@ section { position: relative; padding: clamp(72px, 11vw, 140px) 0; }
 /* HERO */
 .hero { min-height: 100svh; padding: 0; display: grid; grid-template-rows: 1fr auto; overflow: hidden;
   background: linear-gradient(180deg, #E9F0EF 0%, #D6E2E1 54%, #B9CFCF 62%); }
-.hero-copy { align-self: center; padding-top: 100px; padding-bottom: 8px; }
+.hero-copy { align-self: center; padding-top: 100px; padding-bottom: 8px; width: 100%; }
 .hero h1 { font-weight: 200; font-size: clamp(44px, 6.6vw, 96px); line-height: .98; letter-spacing: -0.025em; max-width: none; }
 .hero h1 .strong { display: block; font-weight: 800; letter-spacing: -0.02em; }
 .hero .lead { margin-top: 26px; color: var(--ink-soft); max-width: none; font-size: 23px; }
@@ -440,3 +440,38 @@ footer p { max-width: none; }
 .manifest strong { font-weight: 700; color: var(--fucus); }
 /* solid cards sit above the side kelp */
 .pillars li, .spec, .pd-grid li, .sdg-grid li, .bx-grid, .allies-list li { position: relative; z-index: 3; }
+
+/* ---------- multi-page: sub hero, explore cards, cta band, footer ---------- */
+.hero-sub { min-height: 0; }
+.hero-sub .hero-copy { padding-top: 140px; padding-bottom: 0; }
+.hero-sub h1 { font-weight: 300; font-size: clamp(44px, 6vw, 84px); }
+.hero-sub .lead { max-width: 30em; }
+.hero-sub .sea { height: clamp(170px, 26vh, 280px); }
+.crumb { font-family: var(--display); font-size: 15px; color: var(--ink-soft); margin-bottom: 14px; }
+.crumb a { color: inherit; }
+.explore { list-style: none; display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 680px) { .explore { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1050px) { .explore { grid-template-columns: repeat(3, 1fr); } }
+.explore li { position: relative; z-index: 3; }
+.explore a { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; background: #fff; border-radius: 14px; padding: 26px 24px 24px; border-top: 5px solid var(--c);
+  box-shadow: 0 1px 0 rgba(20,33,31,.06), 0 12px 30px rgba(20,33,31,.07); transition: transform .25s ease, box-shadow .25s ease; }
+.explore a:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(20,33,31,.14); }
+.ex-k { font-family: var(--display); font-size: 13px; letter-spacing: .07em; text-transform: uppercase; color: color-mix(in srgb, var(--c) 70%, #14211F); font-weight: 600; }
+.explore h3 { font-size: 22px; margin: 8px 0 8px; }
+.explore p { font-size: 16px; line-height: 1.5; color: var(--ink-soft); margin-bottom: 18px; }
+.ex-more { margin-top: auto; font-family: var(--display); font-weight: 600; font-size: 15px; }
+.ex-more::after { content: " →"; }
+.cta-band { padding: clamp(64px, 9vw, 110px) 0; }
+.cb-t { font-family: var(--display); font-weight: 300; font-size: clamp(30px, 4.2vw, 50px); line-height: 1.12; color: var(--foam) !important; max-width: 22em; margin-bottom: 28px; }
+.cb-t strong { font-weight: 700; color: var(--fucus); }
+footer .foot { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
+@media (min-width: 900px) { footer .foot { grid-template-columns: 4fr 5fr 4fr; } }
+.foot-brand p { margin-top: 12px; font-size: 15px; }
+.foot-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; font-family: var(--display); font-size: 16px; }
+.foot-nav a, .foot-ct a { color: var(--foam); text-decoration: none; }
+.foot-nav a:hover, .foot-ct a:hover { color: var(--fucus); }
+.foot-ct p { font-size: 15px; margin-top: 6px; }
+.foot-c { opacity: .7; }
+.nav-links a[aria-current="page"] { border-color: var(--kelp); }
+.hero-sub .sea svg > rect:last-of-type { display: none; }
+.hero-sub .sea::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(180deg, transparent, var(--next, #EEF4F3)); pointer-events: none; }
