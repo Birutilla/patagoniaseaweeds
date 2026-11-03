@@ -479,3 +479,5 @@ footer .foot { display: grid; grid-template-columns: 1fr; gap: 28px; align-items
 .nav-links a[aria-current="page"] { border-color: var(--kelp); }
 .hero-sub .sea svg > rect:last-of-type { display: none; }
 .hero-sub .sea::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(180deg, transparent, var(--next, #EEF4F3)); pointer-events: none; }
+
+.hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }

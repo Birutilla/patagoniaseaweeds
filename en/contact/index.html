@@ -114,7 +114,7 @@
 <dt data-i18n="ct_where">Where we are</dt><dd data-i18n="ct_addr">Puerto Varas, Los Lagos Region, Chile</dd>
 </dl>
 </div>
-<form action="https://formspree.io/f/FORMSPREE_ID" id="contactForm" method="POST" novalidate="">
+<form action="https://formsubmit.co/jinfante@patagoniaseaweeds.com" id="contactForm" method="POST" novalidate="">
 <div class="row2">
 <div><label data-i18n="f_name" for="f-name">Name</label><input autocomplete="name" id="f-name" name="nombre" required=""/></div>
 <div><label data-i18n="f_org" for="f-org">Organization</label><input autocomplete="organization" id="f-org" name="organizacion"/></div>
@@ -133,7 +133,10 @@
 </div>
 <div><label data-i18n="f_msg" for="f-msg">Message</label><textarea id="f-msg" name="mensaje" required=""></textarea></div>
 <input name="_next" type="hidden" value="https://www.patagoniaseaweeds.com/gracias.html"/>
-<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+<input name="_subject" type="hidden" value="Nuevo mensaje desde patagoniaseaweeds.com"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input aria-hidden="true" autocomplete="off" class="hp" name="_honey" tabindex="-1" type="text"/>
 <button class="btn btn-send" data-i18n="f_send" type="submit">Send message</button>
 <p class="form-msg" id="formMsg" role="status"></p>
 </form>

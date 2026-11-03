@@ -699,16 +699,16 @@
     var t = MSG[lang];
     var name = form.nombre.value.trim(), mail = form.email.value.trim(), body = form.mensaje.value.trim();
     if (!name || !mail || !body) { msg.textContent = t.missing; return; }
-    if (form.action.indexOf('FORMSPREE_ID') !== -1) {
-      var sub = encodeURIComponent('[Web] ' + form.tema.value + ' | ' + name);
-      var txt = encodeURIComponent(body + '\n\n' + name + '\n' + (form.organizacion.value || '') + '\n' + mail);
-      location.href = 'mailto:jinfante@patagoniaseaweeds.com?subject=' + sub + '&body=' + txt;
-      return;
-    }
+    if (form._honey && form._honey.value) return;
+    form._subject.value = '[Web' + (lang === 'en' ? ' EN' : '') + '] ' + form.tema.value + ' | ' + name;
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
     msg.textContent = t.sending;
-    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-      .then(function (r) { if (r.ok) { form.reset(); msg.textContent = t.ok; } else { msg.textContent = t.err; } })
-      .catch(function () { msg.textContent = t.err; });
+    fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json().then(function (j) { return r.ok && String(j.success) === 'true'; }); })
+      .then(function (ok) { if (ok) { form.reset(); msg.textContent = t.ok; } else { msg.textContent = t.err; } })
+      .catch(function () { msg.textContent = t.err; })
+      .then(function () { btn.disabled = false; });
   });
 
   document.getElementById('yr').textContent = new Date().getFullYear();
