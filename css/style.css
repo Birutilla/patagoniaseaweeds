@@ -481,3 +481,22 @@ footer .foot { display: grid; grid-template-columns: 1fr; gap: 28px; align-items
 .hero-sub .sea::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(180deg, transparent, var(--next, #EEF4F3)); pointer-events: none; }
 
 .hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* ---------- biology, engineering, economics ---------- */
+.triad { list-style: none; display: grid; grid-template-columns: 1fr; gap: 0; position: relative; }
+@media (min-width: 900px) { .triad { grid-template-columns: repeat(3, 1fr); gap: 0; } }
+.triad li { position: relative; z-index: 3; padding: 28px 26px 30px; background: #fff; border-top: 5px solid var(--c); box-shadow: 0 1px 0 rgba(20,33,31,.06), 0 12px 30px rgba(20,33,31,.07); }
+@media (min-width: 900px) {
+  .triad li:first-child { border-radius: 14px 0 0 14px; }
+  .triad li:last-child { border-radius: 0 14px 14px 0; }
+  .triad li + li { border-left: 1px solid rgba(20,33,31,.08); }
+  .triad li:not(:last-child)::after { content: "→"; position: absolute; right: -14px; top: 50px; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: var(--foam); font-family: var(--display); font-size: 15px; display: flex; align-items: center; justify-content: center; z-index: 4; }
+}
+@media (max-width: 899px) { .triad li { border-radius: 14px; margin-bottom: 16px; } }
+.tr-ic { display: inline-flex; width: 60px; height: 60px; border-radius: 50%; background: var(--c); color: #fff; align-items: center; justify-content: center; margin-bottom: 14px; box-shadow: 0 0 0 6px color-mix(in srgb, var(--c) 22%, transparent); }
+.tr-ic svg { width: 36px; height: 36px; }
+.tr-k { display: block; font-family: var(--display); font-size: 13px; letter-spacing: .07em; text-transform: uppercase; font-weight: 600; color: color-mix(in srgb, var(--c) 65%, #14211F); }
+.triad h3 { font-size: 26px; margin: 4px 0 10px; }
+.triad p { font-size: 16.5px; line-height: 1.55; color: var(--ink-soft); }
+.tr-note { margin-top: 36px; max-width: 46em; font-size: 18px; line-height: 1.6; font-style: italic; color: var(--ink-soft); position: relative; z-index: 3; }
+.triad li:nth-child(1) { z-index: 6; } .triad li:nth-child(2) { z-index: 5; } .triad li:nth-child(3) { z-index: 4; }
