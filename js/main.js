@@ -699,14 +699,17 @@
     var t = MSG[lang];
     var name = form.nombre.value.trim(), mail = form.email.value.trim(), body = form.mensaje.value.trim();
     if (!name || !mail || !body) { msg.textContent = t.missing; return; }
-    if (form._honey && form._honey.value) return;
-    form._subject.value = '[Web' + (lang === 'en' ? ' EN' : '') + '] ' + form.tema.value + ' | ' + name;
+    if (form.botcheck && form.botcheck.checked) return;
+    if (form.access_key.value.indexOf('WEB3FORMS') === 0) { msg.textContent = t.err; return; }
+    form.subject.value = '[Web' + (lang === 'en' ? ' EN' : '') + '] ' + form.tema.value + ' | ' + name;
+    form.from_name.value = name;
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true;
     msg.textContent = t.sending;
-    fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-      .then(function (r) { return r.json().then(function (j) { return r.ok && String(j.success) === 'true'; }); })
-      .then(function (ok) { if (ok) { form.reset(); msg.textContent = t.ok; } else { msg.textContent = t.err; } })
+    var data = new FormData(form); data.delete('redirect');
+    fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j && j.success) { form.reset(); msg.textContent = t.ok; } else { msg.textContent = t.err; } })
       .catch(function () { msg.textContent = t.err; })
       .then(function () { btn.disabled = false; });
   });
