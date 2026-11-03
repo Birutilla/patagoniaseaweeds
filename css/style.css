@@ -412,10 +412,14 @@ footer p { max-width: none; }
 .gap-list p { font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
 .sdg { margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(20,33,31,.16); }
 .sdg-t { font-family: var(--display); font-size: 17px; margin-bottom: 16px; }
-.sdg-grid { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-@media (min-width: 900px) { .sdg-grid { grid-template-columns: repeat(4, 1fr); } }
-.sdg-grid li { background: var(--c); color: #fff; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 14px; font-family: var(--display); font-size: 15px; line-height: 1.25; font-weight: 600; }
-.sdg-n { font-size: 36px; font-weight: 800; line-height: 1; min-width: 1.3em; }
+.sdg-grid { list-style: none; display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) { .sdg-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .sdg-grid { grid-template-columns: repeat(3, 1fr); } }
+.sdg-grid li { background: #fff; border-radius: 12px; padding: 14px; display: flex; align-items: center; gap: 16px; box-shadow: 0 1px 0 rgba(20,33,31,.06), 0 10px 24px rgba(20,33,31,.07); }
+.sdg-ic { width: 88px; height: 88px; flex: none; border-radius: 4px; }
+.sdg-grid li div { display: flex; flex-direction: column; gap: 4px; }
+.sdg-grid strong { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sdg-grid li span { font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
 
 /* ---------- spec (kelp paste) ---------- */
 .btn-fucus { background: var(--fucus); color: var(--fjord); }
