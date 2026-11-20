@@ -640,7 +640,7 @@
 
   var ticking = false, swimT, depthBox = document.getElementById('depth');
   var depthTip = document.getElementById('depthTip');
-  if (depthBox && depthTip) {
+  if (depthBox && depthTip && window.matchMedia && window.matchMedia('(hover: none)').matches) {
     var setTip = function (open) { depthTip.hidden = !open; depthBox.classList.toggle('open', open); depthBox.setAttribute('aria-expanded', open ? 'true' : 'false'); };
     depthBox.addEventListener('click', function (e) { e.stopPropagation(); setTip(depthTip.hidden); });
     depthBox.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setTip(depthTip.hidden); } else if (e.key === 'Escape') setTip(false); });
