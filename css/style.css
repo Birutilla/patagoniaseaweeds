@@ -119,7 +119,7 @@ section { position: relative; padding: clamp(72px, 11vw, 140px) 0; }
 .kelp-lane .holdfast { opacity: 0; transition: opacity 1.2s; }
 .kelp-lane .holdfast.on { opacity: 1; }
 
-.depth { position: fixed; right: 18px; bottom: 18px; z-index: 40; font-family: var(--display); font-size: 13px; line-height: 1.2; text-align: right; background: rgba(14,42,51,.86); color: var(--foam); padding: 8px 12px 6px; border-radius: 10px; pointer-events: none; }
+.depth { position: fixed; right: 18px; bottom: 18px; z-index: 40; font-family: var(--display); font-size: 13px; line-height: 1.2; text-align: right; background: rgba(14,42,51,.86); color: var(--foam); padding: 8px 12px 6px; border-radius: 10px; cursor: pointer; }
 .depth { width: 87px; box-sizing: border-box; }
 .depth strong { display: flex; align-items: center; justify-content: flex-end; gap: 6px; height: 28.8px; font-size: 20px; font-weight: 300; }
 .depth .dv { white-space: nowrap; }
@@ -136,8 +136,13 @@ section { position: relative; padding: clamp(72px, 11vw, 140px) 0; }
 .depth .bub circle:nth-child(6) { animation-delay: -2.25s; }
 .depth.swim .bub circle { animation-duration: 1.3s; }
 @keyframes bub { 0% { opacity: 0; transform: translate(0, 0); } 12% { opacity: .95; } 50% { transform: translate(-2.5px, -18px); } 80% { opacity: .7; } 100% { opacity: 0; transform: translate(-1.5px, -38px); } }
+.depth:hover, .depth:focus-visible, .depth.open { background: rgba(14,42,51,.96); outline: none; opacity: 1; }
+.depth:focus-visible { box-shadow: 0 0 0 2px var(--foam); }
+.depth-tip { position: absolute; right: 0; bottom: calc(100% + 10px); width: 250px; padding: 12px 14px; border-radius: 10px; background: rgba(14,42,51,.96); color: var(--foam); text-align: left; font-family: var(--text); font-size: 14px; line-height: 1.45; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+.depth-tip::after { content: ""; position: absolute; right: 30px; top: 100%; border: 7px solid transparent; border-top-color: rgba(14,42,51,.96); }
+.depth-tip p { margin: 0; }
 .depth strong em { font-style: normal; font-size: 13px; margin-left: 2px; }
-@media (max-width: 700px) { .depth { right: 10px; bottom: 10px; padding: 5px 9px 4px; font-size: 11px; opacity: .85; width: 72px; } .depth strong { font-size: 17px; } .depth .diver { width: 12px; height: 20px; } }
+@media (max-width: 700px) { .depth { right: 10px; bottom: 10px; padding: 5px 9px 4px; font-size: 11px; opacity: .85; width: 72px; } .depth strong { font-size: 17px; } .depth .diver { width: 12px; height: 20px; } .depth-tip { width: min(250px, calc(100vw - 20px)); font-size: 13px; } }
 
 /* WHAT WE DO */
 .intro { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 64px; }
